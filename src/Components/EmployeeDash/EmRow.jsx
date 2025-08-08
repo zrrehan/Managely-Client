@@ -6,7 +6,7 @@ import { FiEdit3 } from "react-icons/fi";
 import Swal from "sweetalert2";
 import { IoReload } from "react-icons/io5";
 
-function EmRow({ info, index, setTasks, tasks, load }) {
+function EmRow({ info, index, setTasks, tasks, load, setLoad }) {
     const {user} = useContext(AuthContext);
     const updatedTask = useRef(null);
     const updatedHour = useRef(null);
@@ -58,6 +58,7 @@ function EmRow({ info, index, setTasks, tasks, load }) {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
+                setLoad(true) ///////////////////////////////////////////////////
                 const data = { id: info._id }
                 axios.delete(`https://managely-server.vercel.app/delete-task?email=${user.email}`, {
                     headers: {

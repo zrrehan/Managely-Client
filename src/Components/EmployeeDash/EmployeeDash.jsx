@@ -24,7 +24,7 @@ function EmployeeDash() {
     return(
         <div className="min-h-[100vh] grid md:grid-cols-2">
             <EmForm setTasks={setTasks} tasks={tasks} setLoad={setLoad}></EmForm>
-            <EmTable setTasks={setTasks} tasks={tasks} load={load}></EmTable>
+            <EmTable setTasks={setTasks} tasks={tasks} load={load} setLoad={setLoad}></EmTable>
         </div>
     )
 }

@@ -6,7 +6,7 @@ import { AuthContext } from "../../Context/AuthContext";
 import axios from "axios";
 import EmRow from "./EmRow";
 
-function EmTable({ tasks, setTasks, load }) {
+function EmTable({ tasks, setTasks, load, setLoad }) {
     const {user} = useContext(AuthContext);
     console.log(tasks);
     let tableNumber = 0;
@@ -28,7 +28,7 @@ function EmTable({ tasks, setTasks, load }) {
                     {/* row 1 */}
                     {
                         tasks.slice().reverse().map((info, index) => {
-                            return <EmRow load={load} info={info} index={index} setTasks={setTasks} tasks={tasks}></EmRow>
+                            return <EmRow load={load} setLoad={setLoad} info={info} index={index} setTasks={setTasks} tasks={tasks}></EmRow>
                         })
                     }
                 </tbody>
