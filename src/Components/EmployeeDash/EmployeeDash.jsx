@@ -23,7 +23,7 @@ function EmployeeDash() {
         return <Loading></Loading>
     }
     return(
-        <div className="min-h-[100vh] grid md:grid-cols-2">
+        <div className="min-h-[100vh] flex flex-col items-center gap-10">
             <EmForm setTasks={setTasks} tasks={tasks} setLoad={setLoad}></EmForm>
             <EmTable setTasks={setTasks} tasks={tasks} load={load} setLoad={setLoad}></EmTable>
         </div>

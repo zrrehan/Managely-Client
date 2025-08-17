@@ -12,7 +12,7 @@ function EmTable({ tasks, setTasks, load, setLoad }) {
     let tableNumber = 0;
 
     return(
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto w-full">
             <table className="table">
                 {/* head */}
                 <thead className="bg-gradient-to-r from-gray-800 to-[rgba(198,27,35,255)] text-white">
