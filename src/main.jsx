@@ -17,6 +17,7 @@ import ContactUs from './Routes/ContactUs.jsx'
 import Fired from './Routes/Fired.jsx'
 import PrivateRoute from './PrivateRoute.jsx'
 import Unauthorized from './Routes/Unauthorized.jsx'
+import Error from './Routes/Error.jsx'
 
 const dataPromisePayroll = fetch("/get-payment-details/get-payment-details").then(res => res.json());
 
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
             {
                 path: "/contact-us", 
                 element: <ContactUs></ContactUs>
+            },
+            {
+                path: "*",
+                element: <Error></Error>
             }
         ]
     }, 
