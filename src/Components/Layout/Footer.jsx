@@ -6,9 +6,9 @@ function Footer() {
             <aside>
                 <Logo></Logo>
                 <p>
-                    ACME Industries Ltd.
+                    Managely Industries Ltd.
                     <br />
-                    Providing reliable tech since 1992
+                    Providing reliable tech since 2024
                 </p>
             </aside>
             <nav>
