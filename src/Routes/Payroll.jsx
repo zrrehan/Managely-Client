@@ -2,6 +2,7 @@ import { Suspense, use, useContext } from "react"
 import { AuthContext } from "../Context/AuthContext"
 import { Navigate } from "react-router";
 import PayrollTable from "../Components/Payroll/PayrollTable";
+import Loading from "../Loading";
 
 function Payroll({ dataPromisePayroll }) {
     const {role} = useContext(AuthContext);
@@ -11,8 +12,8 @@ function Payroll({ dataPromisePayroll }) {
         return <Navigate to = "/unauthorized"></Navigate>
     }
     return(
-        <div>
-            <Suspense>
+        <div className="min-h-[100vh]">
+            <Suspense fallback = {<Loading></Loading>}>
                 <PayrollTable dataPromise={dataPromise}></PayrollTable>
             </Suspense>
         </div>

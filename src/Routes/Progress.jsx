@@ -2,6 +2,7 @@ import { Suspense, useContext } from "react"
 import { AuthContext } from "../Context/AuthContext"
 import { Navigate } from "react-router";
 import ProgressComponent from "../Components/Progress/ProgressComponent";
+import Loading from "../Loading";
 
 function Progress() {
     const {role} = useContext(AuthContext);
@@ -13,7 +14,7 @@ function Progress() {
     
     return(
         <div>
-            <Suspense fallback = {<p>loading...</p>}>
+            <Suspense fallback = {<Loading></Loading>}>
                 <ProgressComponent dataPromise={dataPromise}></ProgressComponent>
             </Suspense>
         </div>

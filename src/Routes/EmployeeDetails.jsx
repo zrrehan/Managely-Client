@@ -2,6 +2,7 @@ import { Suspense, useContext } from "react";
 import { Navigate, useParams } from "react-router";
 import EmployeeInfo from "../Components/EmployeeDetails/EmployeeInfo";
 import { AuthContext } from "../Context/AuthContext";
+import Loading from "../Loading";
 
 function EmployeeDetails() {
     const {id} = useParams();
@@ -14,7 +15,7 @@ function EmployeeDetails() {
 
     return(
         <div>
-            <Suspense fallback = {<p>loading...</p>}>
+            <Suspense fallback = {<Loading></Loading>}>
                 <EmployeeInfo dataPromise={dataPromise} id={id}/>
             </Suspense>
         </div>

@@ -2,7 +2,7 @@ import Logo from "./Logo";
 
 function Footer() {
     return(
-        <footer className="footer sm:footer-horizontal bg-base-200 p-10 bg-gradient-to-r from-gray-800 to-[rgba(198,27,35,255)] text-white">
+        <footer className="footer sm:footer-horizontal bg-base-200 p-10 bg-gradient-to-tl from-gray-800 to-[rgba(198,27,35,255)] text-white">
             <aside>
                 <Logo></Logo>
                 <p>

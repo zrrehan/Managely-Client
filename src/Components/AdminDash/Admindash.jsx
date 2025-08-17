@@ -1,6 +1,7 @@
 import { Suspense, useState } from "react";
 import EmployeeTable from "./EmployeeTable";
 import EmployeeCardCollection from "./EmployeeCardCollection";
+import Loading from "../../Loading";
 
 function Admindash() {
     const dataPromise = fetch("https://managely-server.vercel.app/get-employee").then(res => res.json());
@@ -19,7 +20,7 @@ function Admindash() {
                 <option>Grid</option>
                 <option>Table</option>
             </select>
-            <Suspense fallback = {<p>loading....</p>}>
+            <Suspense fallback = {<Loading></Loading>}>
                 {
                     view === "table" ? <EmployeeTable dataPromise={dataPromise}></EmployeeTable> : <EmployeeCardCollection dataPromise={dataPromise}></EmployeeCardCollection>
                 }

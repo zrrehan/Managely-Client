@@ -3,6 +3,7 @@ import EmForm from "./EmForm";
 import EmTable from "./EmTable";
 import axios from "axios";
 import { AuthContext } from "../../Context/AuthContext";
+import Loading from "../../Loading";
 
 function EmployeeDash() {
     const [tasks, setTasks]= useState(null);
@@ -19,7 +20,7 @@ function EmployeeDash() {
     }, [])
 
     if(!tasks) {
-        return <p>Loading</p>
+        return <Loading></Loading>
     }
     return(
         <div className="min-h-[100vh] grid md:grid-cols-2">

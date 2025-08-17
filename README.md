@@ -6,8 +6,8 @@
 
 ## 🌐 Live Site
 
-🔗 **Live Site**: https://managely-51f92.web.app/ 
-📦 **Client Repo**: https://github.com/zrrehan/Managely-Client  
+🔗 **Live Site**: https://managely-51f92.web.app/ <br>
+📦 **Client Repo**: https://github.com/zrrehan/Managely-Client  <br>
 🛠️ **Server Repo**: https://github.com/zrrehan/Managely-Server
 
 ---
