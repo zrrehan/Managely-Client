@@ -47,7 +47,7 @@ function NonAdmin() {
                     <legend className="fieldset-legend">Your Report</legend>
                     <textarea required className="textarea w-full rounded-4xl h-70 px-5" name = "report" placeholder="Write the Report here"></textarea>
                 </fieldset>
-                <button className="btn bg-red-700 text-white rounded-full mt-3 w-70">Submit</button>
+                <button className="btn primary-button lg:w-[500px] mt-3 bg-gradient-to-tl from-gray-800 to-[rgba(198,27,35,255)]">Submit</button>
             </form>
         </div>
     )

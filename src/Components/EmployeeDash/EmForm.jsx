@@ -27,7 +27,7 @@ function EmForm({ setTasks, tasks, setLoad }) {
         }
         
         const data = { task, hours, day, month, year, email: user.email};
-        setButtonText(<><span className="loading loading-spinner loading-xl"></span> Submitting</>);
+        setButtonText(<span className="loading loading-dots loading-xl"></span>);
         axios.post(`https://managely-server.vercel.app/post-task?email=${user.email}`, data, {
             headers: {
                 authorization: `Bearer ${user.accessToken}`
