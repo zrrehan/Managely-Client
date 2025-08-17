@@ -4,10 +4,11 @@ import EmTable from "./EmTable";
 import axios from "axios";
 import { AuthContext } from "../../Context/AuthContext";
 import Loading from "../../Loading";
+import DashboardProfile from "../DashboardProfile";
 
 function EmployeeDash() {
     const [tasks, setTasks]= useState(null);
-    const {user} = useContext(AuthContext);
+    const {user, role} = useContext(AuthContext);
     const [load, setLoad] = useState(false)
 
     useEffect(() => {
@@ -24,6 +25,7 @@ function EmployeeDash() {
     }
     return(
         <div className="min-h-[100vh] flex flex-col items-center gap-10">
+            <DashboardProfile userInfo={{ ...user, role }} workInfo = {tasks}></DashboardProfile>
             <EmForm setTasks={setTasks} tasks={tasks} setLoad={setLoad}></EmForm>
             <EmTable setTasks={setTasks} tasks={tasks} load={load} setLoad={setLoad}></EmTable>
         </div>
