@@ -1,11 +1,15 @@
-import { use } from "react";
+import { use, useContext } from "react";
 import TableRow from "./TableRow";
+import DashboardProfile from "../DashboardProfile";
+import { AuthContext } from "../../Context/AuthContext";
 
 function HRTable({dataPromise}) {
     const data = use(dataPromise);
+    const {user, role} = useContext(AuthContext);
     
     return(
         <div>
+            <DashboardProfile userInfo={{ ...user, role }} workInfo={data}></DashboardProfile>
             <div className="overflow-x-auto rounded-box border border-base-content/5 bg-base-100">
                 <table className="table">
                     {/* head */}
