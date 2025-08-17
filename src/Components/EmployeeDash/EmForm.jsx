@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthContext";
 import axios from "axios";
 import Swal from "sweetalert2";
 
 function EmForm({ setTasks, tasks, setLoad }) {
     const {user} = useContext(AuthContext);
+    const [buttonText, setButtonText] = useState("Submit");
     function formHandler(event) {
         event.preventDefault();
         const [task, hours, day, month, year] = [
@@ -26,6 +27,7 @@ function EmForm({ setTasks, tasks, setLoad }) {
         }
         
         const data = { task, hours, day, month, year, email: user.email};
+        setButtonText(<><span className="loading loading-spinner loading-xl"></span> Submitting</>);
         axios.post(`https://managely-server.vercel.app/post-task?email=${user.email}`, data, {
             headers: {
                 authorization: `Bearer ${user.accessToken}`
@@ -38,6 +40,7 @@ function EmForm({ setTasks, tasks, setLoad }) {
             setTasks(newTable);
             setLoad(true);
             Swal.fire("Your Task has submitted!");
+            setButtonText("Submit");
         })
     
     }
@@ -96,7 +99,7 @@ function EmForm({ setTasks, tasks, setLoad }) {
                     </div>
                 </div>
             </div>
-            <button className="btn primary-button lg:w-[500px] mt-3">Submit</button>
+            <button className="btn primary-button lg:w-[500px] mt-3 bg-gradient-to-tl from-gray-800 to-[rgba(198,27,35,255)]" disabled = {buttonText !== "Submit"}>{buttonText}</button>
         </form>
     )
 }
